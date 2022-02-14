@@ -1,7 +1,6 @@
-/you/have/to/check/what/makeplist/gives/you
 bin/minetestmapper
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README.rst
 share/man/man6/minetestmapper.6.gz
 share/minetest/colors.txt

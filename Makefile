@@ -1,5 +1,5 @@
 PORTNAME=	minetestmapper
-DISTVERSION=	g20211227
+DISTVERSION=	g20220208
 CATEGORIES=     games graphics
 PKGNAMESUFFIX=	-dev
 DISTNAME=	${PORTNAME}-${GH_TAGNAME}
@@ -10,20 +10,20 @@ COMMENT=        Generate an overview image of a minetest map
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libIrrlichtMt.so:x11-toolkits/irrlicht-minetest libzstd.so:archivers/zstd
+LIB_DEPENDS=	libgd.so:graphics/gd libzstd.so:archivers/zstd 
 
 
 #USES=		cmake compiler:c11 iconv:wchar_t pgsql		# complains missing sqlite
 #USES=		cmake compiler:c11 iconv:wchar_t sqlite		# complains missing pgsql
 #USES=		cmake compiler:c11 iconv:wchar_t pgsql sqlite
-USES=           cmake compiler:c11
+USES=           cmake compiler:c11 sqlite pgsql
 
 #CONFLICTS=	minetestmapper
 
 USE_GITHUB=     nodefault
 GH_ACCOUNT=     minetest
 GH_PROJECT=     minetestmapper
-GH_TAGNAME=	9b26d9495cdaaf6af13ff7b5bde0560198e3c722
+GH_TAGNAME=	2e353312b5ce27d85a28dd4c8ff9e561cdc6d1ec
 
 CMAKE_ARGS=	-DBUILD_UNITTESTS="FALSE" \
 		-DCMAKE_BUILD_TYPE="MinSizeRel" \
@@ -32,7 +32,6 @@ CMAKE_ARGS=	-DBUILD_UNITTESTS="FALSE" \
 		-DOPENGL_xmesa_INCLUDE_DIR="${PREFIX}/lib"
 
 WRKSRC=         ${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
-#cmake libgd-dev libhiredis-dev libleveldb-dev libpq-dev libsqlite3-dev zlib1g-dev libzstd-dev
 
 #OPTIONS_DEFINE=	DOCS EXAMPLES FREETYPE NLS
 OPTIONS_GROUP=	DATABASE
