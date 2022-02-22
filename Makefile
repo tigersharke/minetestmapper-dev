@@ -1,5 +1,5 @@
 PORTNAME=	minetestmapper
-DISTVERSION=	g20220209
+DISTVERSION=	g20220221
 CATEGORIES=     games graphics
 PKGNAMESUFFIX=	-dev
 DISTNAME=	${PORTNAME}-${GH_TAGNAME}
@@ -23,7 +23,7 @@ USES=           cmake compiler:c11 sqlite pgsql
 USE_GITHUB=     nodefault
 GH_ACCOUNT=     minetest
 GH_PROJECT=     minetestmapper
-GH_TAGNAME=	31b0d09a198cbfbfa6ef4c4c539edfd291036e6f
+GH_TAGNAME=	18f0615002c2b0b49d60b6c2cc92f1ea114091fd
 
 CMAKE_ARGS=	-DBUILD_UNITTESTS="FALSE" \
 		-DCMAKE_BUILD_TYPE="MinSizeRel" \
