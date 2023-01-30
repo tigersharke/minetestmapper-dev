@@ -1,5 +1,5 @@
 PORTNAME=	minetestmapper
-DISTVERSION=	g20220619
+DISTVERSION=	g20230129
 CATEGORIES=     games graphics
 PKGNAMESUFFIX=	-dev
 DISTNAME=	${PORTNAME}-${GH_TAGNAME}
@@ -7,11 +7,11 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	nope@nothere
 COMMENT=        Generate an overview image of a minetest map
+WWW=		https://github.com/minetest/minetestmapper
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgd.so:graphics/gd libzstd.so:archivers/zstd 
-
+LIB_DEPENDS=	libgd.so:graphics/gd libzstd.so:archivers/zstd
 
 #USES=		cmake compiler:c11 iconv:wchar_t pgsql		# complains missing sqlite
 #USES=		cmake compiler:c11 iconv:wchar_t sqlite		# complains missing pgsql
@@ -23,7 +23,7 @@ USES=           cmake compiler:c11 sqlite pgsql
 USE_GITHUB=     nodefault
 GH_ACCOUNT=     minetest
 GH_PROJECT=     minetestmapper
-GH_TAGNAME=	7fb3b9edd6cbc610404b9d1685150caeedb3eeba
+GH_TAGNAME=	c81cda24d327a9dabfb0758d8a3ba854a22f5238
 
 CMAKE_ARGS=	-DBUILD_UNITTESTS="FALSE" \
 		-DCMAKE_BUILD_TYPE="MinSizeRel" \
