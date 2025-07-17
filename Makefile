@@ -1,6 +1,7 @@
 PORTNAME=	minetestmapper
-DISTVERSION=	g20240420
+DISTVERSION=	g20250408
 CATEGORIES=     games graphics
+MASTER_SITES=   GH
 PKGNAMESUFFIX=	-dev
 DISTNAME=	${PORTNAME}-${GH_TAGNAME}
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
@@ -16,14 +17,14 @@ LIB_DEPENDS=	libgd.so:graphics/gd libzstd.so:archivers/zstd
 #USES=		cmake compiler:c11 iconv:wchar_t pgsql		# complains missing sqlite
 #USES=		cmake compiler:c11 iconv:wchar_t sqlite		# complains missing pgsql
 #USES=		cmake compiler:c11 iconv:wchar_t pgsql sqlite
-USES=           cmake compiler:c11 sqlite pgsql
+USES=	cmake sqlite pgsql
 
 #CONFLICTS=	minetestmapper
 
 USE_GITHUB=     nodefault
 GH_ACCOUNT=     minetest
 GH_PROJECT=     minetestmapper
-GH_TAGNAME=	dd1904a667cb2550652e41f402cebe3fd6e2d84d
+GH_TAGNAME=		637755d6f9e15215f2891eb1df13ae00040aa60d
 
 CMAKE_ARGS=	-DBUILD_UNITTESTS="FALSE" \
 		-DCMAKE_BUILD_TYPE="MinSizeRel" \
@@ -33,7 +34,7 @@ CMAKE_ARGS=	-DBUILD_UNITTESTS="FALSE" \
 
 WRKSRC=         ${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
-# need to cure '%%PORTDOCS%%' extra tage issue
+# need to cure '%%PORTDOCS%%' extra tags issue
 
 #OPTIONS_DEFINE=	DOCS EXAMPLES FREETYPE NLS
 OPTIONS_GROUP=	DATABASE

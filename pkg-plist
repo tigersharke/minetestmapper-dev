@@ -2,5 +2,5 @@ bin/minetestmapper
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/README.rst
+share/luanti/colors.txt
 share/man/man6/minetestmapper.6.gz
-share/minetest/colors.txt
