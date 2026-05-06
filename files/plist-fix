@@ -1,29 +1,14 @@
 #!/bin/sh
-rm /var/tmp/minetestmapper-dev_pkg-plist 2>/dev/null
-rm /var/tmp/minetestmapper-dev_pkg-plist-fixed 2>/dev/null
-cp ../pkg-plist /var/tmp/minetestmapper-dev_pkg-plist
+rm /var/tmp/temporary_pkg-plist 2>/dev/null
+rm /var/tmp/temporary_pkg-plist-fixed 2>/dev/null
+cp ../pkg-plist /var/tmp/temporary_pkg-plist
 
-#echo "adding conditional list tags"
-echo "adjusting.."
+echo "adjusting pkg-plist"
 
-cat /var/tmp/minetestmapper-dev_pkg-plist | \
+cat /var/tmp/temporary_pkg-plist | \
 sed \
 -e 's#^\/you\/have\/to\/check\/what\/makeplist\/gives\/you##' \
 -e '/^$/d' \
 -e 's#^\%\%PORTDOCS\%\%##g' \
-> /var/tmp/minetestmapper-dev_pkg-plist-fixed
-cp /var/tmp/minetestmapper-dev_pkg-plist-fixed ../pkg-plist
-#---------
-#-e 's#^share\/locale#\%\%CLIENT\%\%\%\%NLS\%\%share\/locale#g' \
-#-e 's#^bin/luantiserver#\%\%SERVER\%\%bin/luantiserver#1' \
-#-e 's#^bin/luanti#\%\%CLIENT\%\%bin/luanti#1' \
-#-e 's#^\%\%ETCDIR\%\%.conf.example#@sample\ etc/minetest.conf.example\ etc/minetest.conf#' \
-#-e 's#^\%\%ETCDIR\%\%.conf.example#@sample\ etc/luanti.conf.example\ etc/luanti.conf#' \
-#-e 's#^etc/rc.d/minetest#\%\%SERVER\%\%etc/rc.d/minetest#1' \
-#-e 's#^share/man/man6/luanti.6.gz#\%\%CLIENT\%\%share/man/man6/luanti.6.gz#1' \
-#-e 's#^share/man/man6/luantiserver.6.gz#\%\%SERVER\%\%share/man/man6/luantiserver.6.gz#1' \
-#-e 's#^\%\%DATADIR\%\%/client#\%\%CLIENT\%\%\%\%DATADIR\%\%/client#g' \
-#-e 's#^\%\%DATADIR\%\%/fonts#\%\%CLIENT\%\%\%\%DATADIR\%\%/fonts#g' \
-#-e 's#^\%\%DATADIR\%\%/textures#\%\%CLIENT\%\%\%\%DATADIR\%\%/textures#g' \
-#-e 's#^\%\%DATADIR\%\%/games/devtest#\%\%DEVTEST\%\%\%\%DATADIR\%\%/games/devtest#g' \
-#-e 's#^etc/rc.d/luanti#\%\%SERVER\%\%etc/rc.d/luanti#1' \
+> /var/tmp/temporary_pkg-plist-fixed
+cp /var/tmp/temporary_pkg-plist-fixed ../pkg-plist
