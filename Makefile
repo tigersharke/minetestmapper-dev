@@ -42,7 +42,7 @@ LEVELDB_LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 POSTGRESQL_DESC=		Enable postgresql backend
 POSTGRESQL_CMAKE_BOOL=	ENABLE_POSTGRESQL
-POSTGRESQL_LIB_DEPENDS=	libpq.so.5:databases/postgresql17-client
+POSTGRESQL_LIB_DEPENDS=	libpq.so.5:databases/postgresql${PGSQL_DEFAULT}-client
 POSTGRESQL_USES=		pgsql
 
 REDIS_DESC=				Enable Redis backend
