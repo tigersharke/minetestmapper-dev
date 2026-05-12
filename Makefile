@@ -14,7 +14,7 @@ LICENSE=		GPLv2+
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 				libz-ng.so:archivers/zlib-ng \
-				libgd.so.6:graphics/gd
+				libgd.so:graphics/gd
 
 USES=			cmake sqlite
 
@@ -25,9 +25,9 @@ GH_ACCOUNT=		luanti-org
 GH_PROJECT=		minetestmapper
 GH_TAGNAME=		b5d41a35c388db377edda60c01969fe0fa113ca4
 
-CMAKE_ARGS= -DCMAKE_BUILD_TYPE="Release"
+CMAKE_ARGS=		-DCMAKE_BUILD_TYPE="Release"
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
+#WRKSRC=         ${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
 OPTIONS_GROUP=	DATABASE
 
@@ -42,7 +42,6 @@ LEVELDB_LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 POSTGRESQL_DESC=		Enable postgresql backend
 POSTGRESQL_CMAKE_BOOL=	ENABLE_POSTGRESQL
-POSTGRESQL_LIB_DEPENDS=	libpq.so.5:databases/postgresql${PGSQL_DEFAULT}-client
 POSTGRESQL_USES=		pgsql
 
 REDIS_DESC=				Enable Redis backend

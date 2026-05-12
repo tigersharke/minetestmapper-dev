@@ -1,1 +1,3 @@
-Minetestmapper generates an overview image from a Minetest map.
+Minetestmapper generates an overview image from a luanti "minetest" map. The
+map can be used where no online map is available. Local map saving must be
+enabled in the client to allow for generation.
